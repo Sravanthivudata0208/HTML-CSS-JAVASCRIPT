@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task & Workflow Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Task & Workflow Manager</h2>
+
+    <div class="dashboard">
+        <p>Total Tasks: <span id="totalTasks">0</span></p>
+        <p>High Priority: <span id="highCount">0</span></p>
+        <p>Medium Priority: <span id="mediumCount">0</span></p>
+        <p>Low Priority: <span id="lowCount">0</span></p>
+    </div>
+
+    <form id="taskForm">
+        <input type="text" id="title" placeholder="Task Title" required>
+        <input type="date" id="dueDate" required>
+
+        <select id="priority" required>
+            <option value="">Select Priority</option>
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <select id="status" required>
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    <input type="text" id="search" placeholder="Search tasks..." onkeyup="searchTasks()">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="taskTable"></tbody>
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
